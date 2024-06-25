@@ -4,59 +4,22 @@
 <head>
   <title>Snake Game</title>
   <style>
+    canvas {
+      background-color: #000;
+      display: block;
+      margin: 0 auto;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-    }
-
-    table {
-      width: 50%;
-      margin: 20px auto;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    form {
       text-align: center;
-      margin: 20px;
     }
   </style>
 </head>
 
 <body>
-  <h1 style="text-align: center;">Snake Game</h1>
-  <div style="text-align: center;">
-    <!-- Embed the Snake game here using a JavaScript implementation or a canvas element -->
-  </div>
-  <h2 style="text-align: center;">Scores</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Player</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr th:each="score : ${scores}">
-        <td th:text="${score.player}"></td>
-        <td th:text="${score.score}"></td>
-      </tr>
-    </tbody>
-  </table>
-  <form th:action="@{/score}" method="post">
-    <input type="text" name="player" placeholder="Your name" />
-    <input type="number" name="score" placeholder="Your score" />
-    <button type="submit">Submit</button>
-  </form>
+  <h1>Snake Game</h1>
+  <canvas id="gameCanvas" width="608" height="608"></canvas>
+  <script src="/js/snakeGame.js"></script>
 </body>
 
 </html>
